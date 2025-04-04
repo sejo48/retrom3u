@@ -1,6 +1,7 @@
 #EXTM3U
 #EXTM3U
 #EXTM3U
+#EXTM3U
 #EXTINF:-1 tvg-name="Canal 7" tvg-logo="https://assets-teletica.ray.media/Files/Sizes/2017/10/13/logo-teletica-640132500_380x260.jpg",Canal 7
 https://cdn01.teletica.com/TeleticaLiveStream/Stream/TeleticaLiveStream/Stream7live4/chunks_dvr.m3u8?nimblesessionid=51445790
 #EXTINF:-1 tvg-name="Tele red" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc0CfBLPTdVRLyxhsV8Hq3wfIeJAPwiC2TQOhBNoFV893ShXIpe0MWXG9nhjQnTPtsMTk&usqp=CAU" group-title="Canal de noticias local.",Tele red
@@ -106,7 +107,7 @@ https://59ec5453559f0.streamlock.net/miamitv/smil:WEB/playlist.m3u8
 #EXTINF:-1 tvg-name="Retro Plus TV" tvg-logo="https://placehold.co/32x32/383838/A0A0A0?text=R" group-title="Retro Plus",Retro Plus TV
 https://scl.edge.grupoz.cl/retroplus16@grupoz.cl_retrolive/live/playlist.m3u8
 #EXTINF:-1 tvg-name="88 Stereo" tvg-logo="https://i.imgur.com/i3YwORV.png",88 Stereo
-http://k3.usastreams.com/CableLatino/88stereo/playlist.m3u8
+https://k3.usastreams.com/CableLatino/88stereo/playlist.m3u8
 #EXTINF:-1 tvg-name="Antena Seis TV" tvg-logo="https://i.imgur.com/9Nh2mo9.png",Antena Seis TV
 https://video1.azulstream.com:8081/antenaseistv/index.m3u8
 #EXTINF:-1 tvg-name="Canal 2" tvg-logo="https://i.imgur.com/Nn8BtH5.png",Canal 2
