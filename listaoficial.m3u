@@ -5,7 +5,7 @@
 #EXTM3U
 #EXTM3U
 #EXTINF:-1 tvg-name="Canal 7" tvg-logo="https://assets-teletica.ray.media/Files/Sizes/2017/10/13/logo-teletica-640132500_380x260.jpg",Canal 7
-https://cdn01.teletica.com/TeleticaLiveStream/Stream/playlist_dvr.m3u8
+http://fina.dyndns.tv/Peliculas/Dobermann.mkv
 #EXTINF:-1 tvg-name="Tele red" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc0CfBLPTdVRLyxhsV8Hq3wfIeJAPwiC2TQOhBNoFV893ShXIpe0MWXG9nhjQnTPtsMTk&usqp=CAU" group-title="Canal de noticias local.",Tele red
 https://k20.usastreams.com:8081/telered/index.m3u8
 #EXTINF:-1 tvg-name="Canal 13" tvg-logo="https://sicultura-live.s3.amazonaws.com/public/styles/large_retina/public/media/sinart_canal_13_1.png?itok=WgWfcqWw" group-title="Canal de entretenimiento.",Canal 13
