@@ -2,7 +2,7 @@
   {
     "tituloSerie": "La Isla de Gilligan",
     "descripcion": "1964 ‧ Comedia de situación ‧ 3 Temporadas",
-    "imagen": "https://github.com/sejo48/imajenes/blob/main/19923_w250.jpg?raw=true",
+    "imagen": "https://images.justwatch.com/poster/237948613/s718/la-isla-de-gilligan.jpg",
     "temporadas": [
       {
         "numeroTemporada": 1,
@@ -246,7 +246,7 @@
           },
           {
             "tituloEpisodio": "E23: Episodio 23",
-            "urlDrive": "https://drive.google.com/file/d/1M2fnY5_7VK40q4MOKxGNnXZtJTB6FsqD/preview"
+            "urlDrive": "https://drive.google.com/file/d/1M2fnY5_7VK40q4MOKxGNnXZtJTB6FsqD/view#:~:text=https%3A//drive.google.com/file/d/1M2fnY5_7VK40q4MOKxGNnXZtJTB6FsqD/preview%22%20width%3D%22640%22%20height%3D%22480%22%20allow%3D%22autoplay"
           },
           {
             "tituloEpisodio": "E24: Episodio 24",
@@ -423,7 +423,8 @@
           }
         ]
       }
-    ]
+    ],
+    "originalIndex": 0
   },
   {
     "tituloSerie": "Minecraft película",
@@ -475,7 +476,7 @@
           },
           {
             "tituloEpisodio": "Episodio 6",
-            "urlDrive": "https://drive.google.com/file/d/1DtOJ4DqxY3YbkwMfjRQrscfAxIRy07iE/preview"
+            "urlDrive": "https://drive.google.com/file/d/1DtOJ4DqxY3YbkwMfjRQrscfAxIRy07iE/preview\""
           },
           {
             "tituloEpisodio": "Episodio 7",
@@ -491,7 +492,7 @@
           },
           {
             "tituloEpisodio": "Episodio 10",
-            "urlDrive": "https://drive.google.com/file/d/1Do1S4EGIs74hsACHDPVzR5Zb0v0ImgZU/preview"
+            "urlDrive": "https://drive.google.com/file/d/1Do1S4EGIs74hsACHDPVzR5Zb0v0ImgZU/preview\" width=\"640"
           }
         ]
       }
@@ -578,11 +579,11 @@
         "numeroTemporada": 1,
         "episodios": [
           {
-            "tituloEpisodio": "Daniel Boone    T1 E01 Kentucky",
+            "tituloEpisodio": "Daniel Boone   T1 E01 Kentucky",
             "urlDrive": "https://drive.google.com/file/d/1NI2XbnrEMAiWeZWeQ3uFjOan6X5P0tQV/preview"
           },
           {
-            "tituloEpisodio": "Daniel Boone    T1  E02 Tekawitha Mcleod",
+            "tituloEpisodio": "Daniel Boone   T1  E02 Tekawitha Mcleod",
             "urlDrive": "https://drive.google.com/file/d/1sIiem4Cj-uY-5GR5hYLHnbwOOj803kwh/preview"
           },
           {
@@ -590,31 +591,31 @@
             "urlDrive": "https://drive.google.com/file/d/10DI_w9_ZHZuXJ7_6KSJzJGCWfz2tebi8/preview"
           },
           {
-            "tituloEpisodio": "Daniel Boone    1x05 Pompeya",
+            "tituloEpisodio": "Daniel Boone   1x05 Pompeya",
             "urlDrive": "https://drive.google.com/file/d/1nEmJj2DYbEy96gABbSK2W2Han28Xk2uf/preview"
           },
           {
-            "tituloEpisodio": "Daniel Boone    1x06 La Eleccion",
+            "tituloEpisodio": "Daniel Boone   1x06 La Eleccion",
             "urlDrive": "https://drive.google.com/file/d/1T8CPC-g9CJi1eoXjkOmo0VytHXSFkrnC/preview"
           },
           {
-            "tituloEpisodio": "Daniel Boone    1x04 Lac Duquesne",
+            "tituloEpisodio": "Daniel Boone   1x04 Lac Duquesne",
             "urlDrive": "https://drive.google.com/file/d/1uGZUlcZv3y24pc7MKk1WtwtMnoxbgdGy/preview"
           },
           {
-            "tituloEpisodio": "Daniel Boone    1x08 Mi hermano Keeper",
+            "tituloEpisodio": "Daniel Boone   1x08 Mi hermano Keeper",
             "urlDrive": "https://drive.google.com/file/d/1TWaDKtj9ig4WeyIq9-dhKMp-GqjFkWCA/preview"
           },
           {
-            "tituloEpisodio": "Daniel Boone    1x10 El Sonido de las alas",
+            "tituloEpisodio": "Daniel Boone   1x10 El Sonido de las alas",
             "urlDrive": "https://drive.google.com/file/d/1CbDC3YbBRfI3UQPAFLC0hvulZ4EsUCXj/preview"
           },
           {
-            "tituloEpisodio": "Daniel Boone    1x07 La familia Fluellen",
+            "tituloEpisodio": "Daniel Boone   1x07 La familia Fluellen",
             "urlDrive": "https://drive.google.com/file/d/1nY9RWvB4fndTDi56btHMNjooBLb3jLtj/preview"
           },
           {
-            "tituloEpisodio": "Daniel Boone    1x11 Las hermanas OHannrahan",
+            "tituloEpisodio": "Daniel Boone   1x11 Las hermanas OHannrahan",
             "urlDrive": "https://drive.google.com/file/d/1mJUtiSz78wumEPBwqhyVPCk55EWHtQH5/preview"
           }
         ]
