@@ -1,6 +1,4 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://assets-teletica.ray.media/Files/Sizes/2017/10/13/logo-teletica-640132500_380x260.jpg",Canal 7
-https://cdn01.teletica.com/TeleticaLiveStream/Stream/playlist_dvr.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc0CfBLPTdVRLyxhsV8Hq3wfIeJAPwiC2TQOhBNoFV893ShXIpe0MWXG9nhjQnTPtsMTk&usqp=CAU" group-title="Canal de noticias local.",Tele red
 https://k20.usastreams.com:8081/telered/index.m3u8
 #EXTINF:-1 tvg-logo="https://sicultura-live.s3.amazonaws.com/public/styles/large_retina/public/media/sinart_canal_13_1.png?itok=WgWfcqWw" group-title="Canal de entretenimiento.",Canal 13
@@ -97,8 +95,6 @@ https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8
 https://59ec5453559f0.streamlock.net/miamitv/smil:WEB/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/U73kFg4Qya85ClsrZ0r8z4srpmZ2xb_85TlGjSwNnJvYdqcGVCkVL2KmQtK0heLnCMo" group-title="Retro Plus",Retro Plus TV
 https://scl.edge.grupoz.cl/retroplus16@grupoz.cl_retrolive/live/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/i3YwORV.png",88 Stereo
-https://k3.usastreams.com/CableLatino/88stereo/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/9Nh2mo9.png",Antena Seis TV
 https://video1.azulstream.com:8081/antenaseistv/index.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/Nn8BtH5.png",Canal 2
