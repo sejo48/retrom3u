@@ -87,8 +87,6 @@ https://stmv6.voxtvhd.com.br/cineaccion/cineaccion/playlist.m3u8
 https://v2.azulstream.com:8081/gamtv/gamtv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/h88IKJCItR4KafxYzqfMphDkLzXdREH24qDrW-CzFMedCCjBl4D2baR3xWF48tOkNltM6MM9hA=s900-c-k-c0x00ffffff-no-rj" group-title="Deportes.",Claro Sports
 https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/bein-sports-xtra-en-espanol/d3358062-b357-4738-9cfb-6824db0ada53/0.m3u8
-#EXTINF:-1 tvg-logo="https://static-media.streema.com/media/cache/cc/d1/ccd144db07aadbd048f3d2c74076ba4e.jpg" group-title="Música que se vive",IQ TV
-http://tv.ticosmedia.com:1935/IQ/IQ/chunklist_w1774290041.m3u8
 #EXTINF:-1 tvg-logo="https://www.serialgamer.it/wp-content/uploads/2022/06/red-bull-tv_fs8fm15cu17f1m6xc86vj7w0b.png" group-title="Red Bull TV: deportes",RED BULL
 https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9QUatPxBhTck6kKk1nTNsRuKLVgXUJfgVjA&s" group-title="VER MIAMI TV EN VIVO",Miami TV
