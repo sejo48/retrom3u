@@ -137,3 +137,19 @@ https://stream.gia.tv/giatv/giatv-retromagico/retromagico/chunks.m3u8
 https://cp.panelchs.com:1936/crwfnxfxvj/crwfnxfxvj/chunklist_w466440157.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEGqbHtYnAN-tyhP7XuSKDMi3E2oXL9jtoVspCuioh5ZVB-9w0r5wq0CSzyH_00QTpiCM&usqp=CAU",Canal Bolivia
 https://cloud5.streaminglivehd.com:3819/hybrid/play.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtJvHa01Kz7msCS49obbGVIqvHeDCQr8EN_A&s",Tele sur
+https://k20.usastreams.com:8081/tvsur/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/tvficticia/images/d/d3/EnerGeekLogo.png/revision/latest?cb=20230725065852&path-prefix=es",EnerGeek Retro
+https://xui-backend.energeek.cl/live/9/playlist.m3u8?username=dEmoweBeneRGEek2025&password=TG66MDvVi9to
+#EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/U73kFg4Qya85ClsrZ0r8z4srpmZ2xb_85TlGjSwNnJvYdqcGVCkVL2KmQtK0heLnCMo",Retro plus
+https://stream.gia.tv/giatv/giatv-Retroplustv03/Retroplustv03/chunks.m3u8
+#EXTINF:-1 tvg-logo="https://img.freepik.com/vector-premium/television-clasica_7209-20.jpg",Mi TV
+https://mitv.getstreamhosting.com:30443/live/livestream123/chunks.m3u8
+#EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/db915a4360bae6754dc699174c717e12.webp",Codigo TV
+https://vdo2.streamgato.us:3313/live/codigotvlive.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4k8GTkeCR_LP07JPSzEr0ipQkS4aODwIaqtbu8iMgTW_4nY5jbo6bQpBqqTWCg7pJfJU&usqp=CAU",Canal 6 Nicaragua
+https://live.eu-north-1a.cf.dmcdn.net/sec2(Cr-ymFcKFNNBUda5gGPZSMQogYg4Bb0h4iv4Q54wKVibA9sfSSwQ1iN3UOLCw_Nu-8taRLordN5JY7tIhxNYMej5ey7WlB6g5gGII4FR8Qqv9I3lXBBknDOcuUTLn1pR)/dm/3/x96x78e/s/live-380.m3u8#cell=lcf-eu-north-1a
+#EXTINF:-1 tvg-logo="https://lh6.ggpht.com/XBZm1nL7kgjjH5FEAN0NmeqWVaa-qlyqLJMuSbe3RCit7ZaZtpcXbf3nFFK2BbC2Lds" group-title="cotubanama",Canal 36
+https://host.streamingnation.live/p/3588/hybrid/play.m3u8
+#EXTINF:-1,canal 6 costa rica
+https://d1vr8yxz55pucr.cloudfront.net/480p.m3u8
