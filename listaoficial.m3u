@@ -11,8 +11,6 @@ https://cloudflare.streamgato.us:3125/live/megacinetvlive.m3u8
 https://stmv6.voxtvhd.com.br/xtremacartoons/xtremacartoons/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/zLkTnFfdGGq5-cuY0DBvsCoiRUToWFA8rcm_Z3ieUr7rwgmzyojRXIfqMXt9dm4ocjs" group-title="Canal  retro.",Retro tv
 https://server.streamtech.com.co:5443/retroTv/streams/sJlaR9zuk3cJ8jqN4467369974529.m3u8
-#EXTINF:-1 tvg-logo="https://teleclasica.com/wp-content/uploads/2025/01/OTHER.png" group-title="Canal de películas clásicas.",Tele Clacica
-https://ssh101stream.ssh101.com/akamaissh101/ssh101/teleclasik/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBsKLLZbFpvVQrOzRAnA9BCRraLxP3-GLwvBv30iNI6TpPz1o51sa1de7pGKS40Quzajw&usqp=CAU" group-title="Canal de series retro.",TV Retro
 https://ssh101.bozztv.com/ssh101/tvretropalmares/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9YKvejKBdJWBUfm0Oc32tKTO1QKQXXu2s4A&s" group-title="Canal de entretenimiento.",Tele sistema
@@ -77,8 +75,6 @@ https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c
 https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9QUatPxBhTck6kKk1nTNsRuKLVgXUJfgVjA&s" group-title="VER MIAMI TV EN VIVO",Miami TV
 https://59ec5453559f0.streamlock.net/miamitv/smil:WEB/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/U73kFg4Qya85ClsrZ0r8z4srpmZ2xb_85TlGjSwNnJvYdqcGVCkVL2KmQtK0heLnCMo" group-title="Retro Plus",Retro Plus
-https://ssh101stream.ssh101.com/akamaissh101/ssh101/retroplustv/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/9Nh2mo9.png",Antena seis tv
 https://video1.azulstream.com:8081/antenaseistv/index.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/Nn8BtH5.png",REPRETEL-C2
@@ -117,8 +113,6 @@ https://videoserver.tmcreativos.com:19360/gesfnvpamn/gesfnvpamn.m3u8
 https://videostream.shockmedia.com.ar:19360/videoclub/videoclub.m3u8
 #EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/jCFvfJuhezHyqYCiBhWQtKvEyyq7syTMkpWRks1E_toGgPdaIMo9sMpxpMYWGBrdf2mSymKL=s900-c-k-c0x00ffffff-no-rj",Cine Accion
 https://stmv6.voxtvhd.com.br/cineaccion/cineaccion/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrcK72KvjC2H73t1iUyXkKPk0YxCJmQ78jig&s" group-title="películas y mas",Retro honduras
-https://streamtv12.ddns.net:5443/LiveApp/streams/193945633734205616732920.m3u8
 #EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/xsd3iI03lzA/sddefault.jpg",Tele ver cana  12
 https://vdo1.streamgato.us:3342/live/televercanal12live.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRr3bmOPMWpG4PLRg_uRAvIEKPCZTprG-_Jw&s",TELE VIDA
@@ -131,8 +125,6 @@ https://imagenuniversaltv.net:3741/live/tvslive.m3u8
 https://spinoff.link/live/m3u8.php?url=https://live-news-manifest.tubi.video/live-news-manifest/csm/extlive/tubiprd01,Fox-Sports-Espanol2.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcwtXblwoKO9Kaj_2eRxMd4ifjJ48HQt7eH4NHGU1vJeVqGbXBUHuBx941s5jag1ghRcU&usqp=CAU",Gogoplay
 https://giatv.bozztv.com/giatv/giatv-NEOGOGOPLAY/NEOGOGOPLAY/chunks.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYLLgAwqEfmjjviumCzKKC2uBV8F6IYunzdw&s" group-title="kids",Nagik kids
-https://stream.gia.tv/giatv/giatv-retromagico/retromagico/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnmfRlNKDlYKtYRVsgs9qllgFT8_B9T2R6JA&s",Canal 506
 https://cp.panelchs.com:1936/crwfnxfxvj/crwfnxfxvj/chunklist_w466440157.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEGqbHtYnAN-tyhP7XuSKDMi3E2oXL9jtoVspCuioh5ZVB-9w0r5wq0CSzyH_00QTpiCM&usqp=CAU",Canal Bolivia
@@ -141,8 +133,6 @@ https://cloud5.streaminglivehd.com:3819/hybrid/play.m3u8
 https://k20.usastreams.com:8081/tvsur/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/tvficticia/images/d/d3/EnerGeekLogo.png/revision/latest?cb=20230725065852&path-prefix=es",EnerGeek Retro
 https://xui-backend.energeek.cl/live/9/playlist.m3u8?username=dEmoweBeneRGEek2025&password=TG66MDvVi9to
-#EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/U73kFg4Qya85ClsrZ0r8z4srpmZ2xb_85TlGjSwNnJvYdqcGVCkVL2KmQtK0heLnCMo",Retro plus
-https://stream.gia.tv/giatv/giatv-Retroplustv03/Retroplustv03/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://img.freepik.com/vector-premium/television-clasica_7209-20.jpg",Mi TV
 https://mitv.getstreamhosting.com:30443/live/livestream123/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/db915a4360bae6754dc699174c717e12.webp",Codigo TV
