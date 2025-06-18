@@ -143,3 +143,11 @@ https://live.eu-north-1a.cf.dmcdn.net/sec2(Cr-ymFcKFNNBUda5gGPZSMQogYg4Bb0h4iv4Q
 https://host.streamingnation.live/p/3588/hybrid/play.m3u8
 #EXTINF:-1,canal 6 costa rica
 https://d1vr8yxz55pucr.cloudfront.net/480p.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXCSVT3-BLGVDwOVsYE_sER_tr_Ga9JQdWwg&s" group-title="retro",ANI RETRO
+https://tv.arkeo.cl:19360/8000/8000.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeFm-q_tTR9_DInWxrnzCJElp00p6sZPTdGg&s" group-title="retro",Retro Plus TV
+https://live20.bozztv.com/akamaissh101/ssh101/retroplustv03/playlist.m3u8?PlaylistM3UCL
+#EXTINF:-1 tvg-logo="https://static.wixstatic.com/media/7acae1_1045e40ee9f9492ea5f0fbac4ae32d7d~mv2.png/v1/fill/w_240,h_240,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/tvs.png",TVS Retro
+https://cdn.streamhispanatv.net:3531/live/tvsretrogtlive.m3u8
+#EXTINF:-1 tvg-logo="https://cdn.mitvstatic.com/channels/sv_discovery-kids_m.png",Discovery Kids
+http://181.205.130.194:4000/play/a0ac
