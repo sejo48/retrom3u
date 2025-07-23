@@ -1,527 +1,123 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor de Listas M3U</title>
-    
-    <!-- Tailwind CSS para un diseño moderno y responsivo -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- HLS.js para reproducir streams HLS (m3u8) -->
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    
-    <!-- Iconos de Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <style>
-        /* Estilos personalizados para mejorar la apariencia */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Scrollbar personalizado */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1f2937; /* bg-gray-800 */
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #4b5563; /* bg-gray-600 */
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #6b7280; /* bg-gray-500 */
-        }
-        .channel-item.selected {
-            background-color: #3b82f6; /* bg-blue-600 */
-            color: white;
-        }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body class="bg-gray-900 text-white antialiased">
-
-    <div id="app" class="flex flex-col lg:flex-row h-screen overflow-hidden">
-
-        <!-- Columna Izquierda: Lista de Canales y Controles -->
-        <aside class="w-full lg:w-1/3 xl:w-1/4 bg-gray-800 flex flex-col p-4 border-r border-gray-700">
-            <header class="mb-4">
-                <h1 class="text-2xl font-bold text-white flex items-center gap-2">
-                    <i class="ph-fill ph-list-dashes"></i> Editor M3U
-                </h1>
-                <p class="text-sm text-gray-400">Carga, edita y guarda tus listas de canales.</p>
-            </header>
-
-            <!-- Controles Principales -->
-            <div class="grid grid-cols-2 gap-2 mb-4">
-                <label for="file-upload" class="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center justify-center transition-colors">
-                    <i class="ph ph-upload-simple mr-2"></i> Cargar Lista
-                </label>
-                <input id="file-upload" type="file" class="hidden" accept=".m3u,.m3u8">
-                
-                <button id="download-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center justify-center transition-colors">
-                    <i class="ph ph-download-simple mr-2"></i> Descargar
-                </button>
-            </div>
-            <button id="add-channel-btn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center justify-center transition-colors mb-4">
-                <i class="ph ph-plus-circle mr-2"></i> Añadir Canal
-            </button>
-
-            <!-- Filtro de Búsqueda -->
-            <div class="relative mb-4">
-                <input type="text" id="search-input" placeholder="Buscar canal o grupo..." class="w-full bg-gray-700 border border-gray-600 rounded-lg py-2 px-4 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-            </div>
-            
-            <!-- Lista de Canales -->
-            <div id="channel-list-container" class="flex-grow overflow-y-auto">
-                <ul id="channel-list">
-                    <!-- Los canales se insertarán aquí dinámicamente -->
-                </ul>
-            </div>
-        </aside>
-
-        <!-- Columna Derecha: Reproductor y Contenido Dinámico -->
-        <main class="w-full lg:w-2/3 xl:w-3/4 flex flex-col p-4">
-            <!-- Reproductor de Video con Contenedor de Error -->
-            <div id="video-player-container" class="bg-black rounded-lg mb-4 aspect-video flex items-center justify-center relative flex-shrink-0 max-h-[50vh]">
-                <video id="video-player" class="w-full h-full rounded-lg" controls></video>
-                <div id="video-error-overlay" class="absolute inset-0 bg-black bg-opacity-80 flex-col items-center justify-center text-center p-4 hidden">
-                    <i class="ph-fill ph-warning-circle text-5xl text-red-500 mb-4"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">Error al Cargar el Canal</h3>
-                    <p class="text-gray-300" id="video-error-message"></p>
-                </div>
-            </div>
-            
-            <div class="flex-grow relative overflow-y-auto">
-                <!-- Información del Canal Seleccionado -->
-                <div id="channel-info" class="bg-gray-800 p-4 rounded-lg hidden">
-                    <h2 class="text-xl font-bold" id="info-title"></h2>
-                    <p class="text-gray-400" id="info-group"></p>
-                    <p class="text-sm text-gray-500 break-all" id="info-url"></p>
-                </div>
-                
-                <!-- Guía de Usuario (Visible por defecto) -->
-                <div id="user-guide" class="bg-gray-800 p-6 rounded-lg">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center gap-2"><i class="ph-fill ph-book-open"></i> Guía de Usuario</h2>
-                    <ol class="list-decimal list-inside space-y-3 text-gray-300">
-                        <li><strong>Cargar Lista:</strong> Haz clic en <span class="font-semibold text-blue-400">"Cargar Lista"</span> para seleccionar un archivo `.m3u` de tu dispositivo.</li>
-                        <li><strong>Seleccionar Canal:</strong> Haz clic en un canal de la lista para reproducirlo y ver su información.</li>
-                        <li><strong>Editar Canal:</strong> Usa el botón <i class="ph ph-pencil-simple text-yellow-400"></i> para modificar el logo, nombre, grupo y URL de un canal.</li>
-                        <li><strong>Mover Canales:</strong> Utiliza las flechas <i class="ph ph-arrow-up text-green-400"></i> y <i class="ph ph-arrow-down text-red-400"></i> para cambiar la posición de un canal.</li>
-                        <li><strong>Eliminar Canal:</strong> Presiona el botón <i class="ph ph-trash text-red-500"></i> para quitar un canal de la lista.</li>
-                        <li><strong>Añadir Canal:</strong> Haz clic en <span class="font-semibold text-indigo-400">"Añadir Canal"</span> para agregar una nueva entrada a la lista.</li>
-                        <li><strong>Descargar Lista:</strong> Cuando termines de editar, haz clic en <span class="font-semibold text-green-400">"Descargar"</span> para guardar la lista modificada como un nuevo archivo `.m3u`.</li>
-                    </ol>
-                </div>
-
-                <!-- Formulario de Edición (Oculto por defecto) -->
-                <div id="edit-form-container" class="bg-gray-800 rounded-lg shadow-xl p-6 hidden">
-                    <h2 id="form-title" class="text-2xl font-bold mb-6">Editar Canal</h2>
-                    <form id="edit-form">
-                        <input type="hidden" id="edit-index">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="mb-4">
-                                <label for="edit-title" class="block text-sm font-medium text-gray-300 mb-1">Título del Canal</label>
-                                <input type="text" id="edit-title" class="w-full bg-gray-700 border border-gray-600 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="edit-group" class="block text-sm font-medium text-gray-300 mb-1">Grupo</label>
-                                <input type="text" id="edit-group" class="w-full bg-gray-700 border border-gray-600 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <label for="edit-logo" class="block text-sm font-medium text-gray-300 mb-1">URL del Logo</label>
-                            <input type="url" id="edit-logo" class="w-full bg-gray-700 border border-gray-600 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <div class="mb-6">
-                            <label for="edit-url" class="block text-sm font-medium text-gray-300 mb-1">URL del Stream</label>
-                            <input type="url" id="edit-url" class="w-full bg-gray-700 border border-gray-600 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                        </div>
-                        <div class="flex justify-end gap-4">
-                            <button type="button" id="cancel-edit-btn" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-lg transition-colors">Cancelar</button>
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition-colors">Salvar Cambios</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Referencias a elementos del DOM
-            const fileUpload = document.getElementById('file-upload');
-            const downloadBtn = document.getElementById('download-btn');
-            const channelListUl = document.getElementById('channel-list');
-            const searchInput = document.getElementById('search-input');
-            const videoPlayer = document.getElementById('video-player');
-            const addChannelBtn = document.getElementById('add-channel-btn');
-
-            // Contenedores de contenido dinámico
-            const userGuide = document.getElementById('user-guide');
-            const channelInfoDiv = document.getElementById('channel-info');
-            const editFormContainer = document.getElementById('edit-form-container');
-            const videoErrorOverlay = document.getElementById('video-error-overlay');
-            const videoErrorMessage = document.getElementById('video-error-message');
-
-            // Elementos del formulario de edición
-            const editForm = document.getElementById('edit-form');
-            const formTitle = document.getElementById('form-title');
-            const cancelEditBtn = document.getElementById('cancel-edit-btn');
-            
-            // Elementos de la info del canal
-            const infoTitle = document.getElementById('info-title');
-            const infoGroup = document.getElementById('info-group');
-            const infoUrl = document.getElementById('info-url');
-
-            // Almacenamiento de datos
-            let channels = [];
-            let hls;
-            let currentPlayingIndex = -1;
-
-            // --- Lógica de Almacenamiento Local ---
-            const saveChannelsToLocalStorage = () => {
-                try {
-                    localStorage.setItem('m3uEditorChannels', JSON.stringify(channels));
-                } catch (e) {
-                    console.error("Error al guardar en localStorage:", e);
-                }
-            };
-
-            const loadChannelsFromLocalStorage = () => {
-                const savedChannelsJSON = localStorage.getItem('m3uEditorChannels');
-                if (savedChannelsJSON) {
-                    try {
-                        const parsed = JSON.parse(savedChannelsJSON);
-                        if (Array.isArray(parsed)) {
-                            channels = parsed;
-                            return; // Salida exitosa
-                        }
-                    } catch (e) {
-                        console.error("Error al cargar canales desde localStorage:", e);
-                    }
-                }
-                // Si no hay datos o hay un error, carga los de ejemplo.
-                loadSampleData();
-            };
-
-            // --- Lógica de UI ---
-            const updateButtonStates = () => {
-                downloadBtn.disabled = channels.length === 0;
-                downloadBtn.classList.toggle('opacity-50', channels.length === 0);
-                downloadBtn.classList.toggle('cursor-not-allowed', channels.length === 0);
-            };
-
-            // --- Lógica Principal ---
-            const parseM3U = (m3uContent) => {
-                const lines = m3uContent.split('\n');
-                const parsedChannels = [];
-                let currentChannel = {};
-
-                if (!lines[0].startsWith('#EXTM3U')) {
-                    console.error('El archivo no es una lista M3U válida.');
-                    channelListUl.innerHTML = `<li class="text-red-400 p-4 text-center">Error: El archivo no es una lista M3U válida.</li>`;
-                    channels = [];
-                } else {
-                    lines.forEach(line => {
-                        line = line.trim();
-                        if (line.startsWith('#EXTINF:')) {
-                            const info = line.substring(8).trim();
-                            const titleMatch = info.match(/,(.+)$/);
-                            currentChannel.title = titleMatch ? titleMatch[1] : 'Sin Título';
-                            const logoMatch = info.match(/tvg-logo="([^"]+)"/);
-                            currentChannel.logo = logoMatch ? logoMatch[1] : '';
-                            const groupMatch = info.match(/group-title="([^"]+)"/);
-                            currentChannel.group = groupMatch ? groupMatch[1] : 'Sin Grupo';
-                        } else if (line && !line.startsWith('#')) {
-                            currentChannel.url = line;
-                            parsedChannels.push(currentChannel);
-                            currentChannel = {};
-                        }
-                    });
-                    channels = parsedChannels;
-                }
-            };
-
-            const renderChannelList = (filter = '') => {
-                channelListUl.innerHTML = '';
-                const lowerCaseFilter = filter.toLowerCase();
-                let itemsRendered = 0;
-
-                channels.forEach((channel, index) => {
-                    if (filter && !channel.title.toLowerCase().includes(lowerCaseFilter) && !channel.group.toLowerCase().includes(lowerCaseFilter)) {
-                        return;
-                    }
-                    itemsRendered++;
-                    
-                    const li = document.createElement('li');
-                    li.className = `channel-item flex items-center p-3 border-b border-gray-700 hover:bg-gray-700 cursor-pointer transition-colors ${index === currentPlayingIndex ? 'selected' : ''}`;
-                    li.dataset.index = index;
-
-                    const logoImg = document.createElement('img');
-                    logoImg.src = channel.logo || 'https://placehold.co/40x40/1f2937/ffffff?text=?';
-                    logoImg.alt = 'Logo';
-                    logoImg.className = 'w-10 h-10 rounded-md mr-4 object-cover bg-gray-600';
-                    logoImg.onerror = () => { logoImg.src = 'https://placehold.co/40x40/1f2937/ffffff?text=?'; };
-
-                    const textDiv = document.createElement('div');
-                    textDiv.className = 'flex-grow';
-                    textDiv.innerHTML = `<p class="font-semibold text-sm">${channel.title}</p><p class="text-xs text-gray-400">${channel.group}</p>`;
-
-                    const controlsDiv = document.createElement('div');
-                    controlsDiv.className = 'flex items-center gap-1 ml-2';
-                    controlsDiv.innerHTML = `
-                        <button class="move-up-btn p-1 rounded-full hover:bg-gray-600" title="Mover Arriba"><i class="ph ph-arrow-up text-lg text-green-400"></i></button>
-                        <button class="move-down-btn p-1 rounded-full hover:bg-gray-600" title="Mover Abajo"><i class="ph ph-arrow-down text-lg text-red-400"></i></button>
-                        <button class="edit-btn p-1 rounded-full hover:bg-gray-600" title="Editar"><i class="ph ph-pencil-simple text-lg text-yellow-400"></i></button>
-                        <button class="delete-btn p-1 rounded-full hover:bg-gray-600" title="Eliminar"><i class="ph ph-trash text-lg text-red-500"></i></button>`;
-                    
-                    li.appendChild(logoImg);
-                    li.appendChild(textDiv);
-                    li.appendChild(controlsDiv);
-                    channelListUl.appendChild(li);
-                });
-
-                if (channels.length === 0) {
-                    channelListUl.innerHTML = `<li class="text-gray-500 p-4 text-center">Carga una lista M3U para empezar.</li>`;
-                } else if (itemsRendered === 0) {
-                    channelListUl.innerHTML = `<li class="text-gray-500 p-4 text-center">No se encontraron resultados.</li>`;
-                }
-            };
-
-            const playChannel = (index) => {
-                if (index < 0 || index >= channels.length) return;
-                
-                videoErrorOverlay.classList.add('hidden');
-                const channel = channels[index];
-                currentPlayingIndex = index;
-                
-                infoTitle.textContent = channel.title;
-                infoGroup.textContent = channel.group;
-                infoUrl.textContent = channel.url;
-                
-                channelInfoDiv.classList.remove('hidden');
-                userGuide.classList.add('hidden');
-                editFormContainer.classList.add('hidden');
-
-                if (hls) hls.destroy();
-
-                const playVideo = async () => {
-                    try {
-                        await videoPlayer.play();
-                    } catch (error) {
-                        if (error.name !== 'AbortError') console.error("Error al reproducir:", error);
-                    }
-                };
-
-                if (Hls.isSupported() && channel.url.includes('.m3u8')) {
-                    hls = new Hls();
-                    hls.loadSource(channel.url);
-                    hls.attachMedia(videoPlayer);
-                    hls.on(Hls.Events.MANIFEST_PARSED, playVideo);
-                    
-                    hls.on(Hls.Events.ERROR, (event, data) => {
-                        if (data.fatal) {
-                            console.error('Error fatal de HLS:', data);
-                            switch (data.type) {
-                                case Hls.ErrorTypes.NETWORK_ERROR:
-                                    if (data.details === Hls.ErrorDetails.MANIFEST_LOAD_ERROR) {
-                                        videoErrorMessage.textContent = 'La URL del canal no se encontró (Error 404). Puede que esté incorrecta o el stream esté fuera de línea.';
-                                        videoErrorOverlay.classList.remove('hidden');
-                                    } else {
-                                        videoErrorMessage.textContent = 'Error de red al cargar el canal.';
-                                        videoErrorOverlay.classList.remove('hidden');
-                                    }
-                                    break;
-                                case Hls.ErrorTypes.MEDIA_ERROR:
-                                    videoErrorMessage.textContent = 'Error en el contenido del video. El formato podría no ser compatible.';
-                                    videoErrorOverlay.classList.remove('hidden');
-                                    hls.recoverMediaError();
-                                    break;
-                                default:
-                                    videoErrorMessage.textContent = 'Ocurrió un error inesperado al cargar el canal.';
-                                    videoErrorOverlay.classList.remove('hidden');
-                                    hls.destroy();
-                                    break;
-                            }
-                        }
-                    });
-                } else {
-                    videoPlayer.src = channel.url;
-                    playVideo();
-                }
-                renderChannelList(searchInput.value);
-            };
-            
-            const openEditor = (index = null) => {
-                editFormContainer.classList.remove('hidden');
-                userGuide.classList.add('hidden');
-                channelInfoDiv.classList.add('hidden');
-                editForm.reset();
-                
-                if (index !== null && channels[index]) {
-                    const channel = channels[index];
-                    formTitle.textContent = 'Editar Canal';
-                    document.getElementById('edit-index').value = index;
-                    document.getElementById('edit-title').value = channel.title;
-                    document.getElementById('edit-logo').value = channel.logo;
-                    document.getElementById('edit-group').value = channel.group;
-                    document.getElementById('edit-url').value = channel.url;
-                } else {
-                    formTitle.textContent = 'Añadir Nuevo Canal';
-                    document.getElementById('edit-index').value = '';
-                }
-            };
-
-            const closeEditor = () => {
-                editFormContainer.classList.add('hidden');
-                if (currentPlayingIndex !== -1) {
-                    channelInfoDiv.classList.remove('hidden');
-                } else {
-                    userGuide.classList.remove('hidden');
-                }
-            };
-
-            const generateM3UContent = () => {
-                let content = '#EXTM3U\n';
-                channels.forEach(channel => {
-                    content += `#EXTINF:-1 tvg-logo="${channel.logo || ''}" group-title="${channel.group || ''}",${channel.title}\n`;
-                    content += `${channel.url}\n`;
-                });
-                return content;
-            };
-            
-            const loadSampleData = () => {
-                const sampleM3U = `#EXTM3U
-#EXTINF:-1 tvg-logo="https://i.imgur.com/gN3a2V8.png" group-title="Noticias",Canal de Noticias 24h
-http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
-#EXTINF:-1 tvg-logo="https://i.imgur.com/P5u1s4U.png" group-title="Música",Canal de Videos Musicales
-http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4
-#EXTINF:-1 tvg-logo="https://i.imgur.com/e8s2w5s.png" group-title="Cine",Películas Clásicas
-http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/1/13/Big_Buck_Bunny_logo.svg" group-title="Animación",Big Buck Bunny (HLS)
-https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
-#EXTINF:-1 tvg-logo="" group-title="Error",Canal Roto (404)
-https://liveingesta118.cdnmedia.tv/trivision36live/smil:dvrlive.smil/playlist.m3u8`;
-                parseM3U(sampleM3U);
-            };
-
-            // --- Event Listeners ---
-            fileUpload.addEventListener('change', (event) => {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        parseM3U(e.target.result);
-                        renderChannelList();
-                        updateButtonStates();
-                        saveChannelsToLocalStorage(); // Guardar nueva lista
-                    };
-                    reader.readAsText(file);
-                }
-            });
-
-            downloadBtn.addEventListener('click', () => {
-                const m3uContent = generateM3UContent();
-                const blob = new Blob([m3uContent], { type: 'application/vnd.apple.mpegurl;charset=utf-8' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'lista_editada.m3u';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            });
-            
-            searchInput.addEventListener('input', (e) => renderChannelList(e.target.value));
-
-            channelListUl.addEventListener('click', (e) => {
-                const li = e.target.closest('.channel-item');
-                if (!li) return;
-                const index = parseInt(li.dataset.index, 10);
-                if (isNaN(index)) return;
-
-                if (e.target.closest('.edit-btn')) {
-                    e.stopPropagation();
-                    openEditor(index);
-                } else if (e.target.closest('.delete-btn')) {
-                    e.stopPropagation();
-                    if (confirm(`¿Seguro que quieres eliminar "${channels[index].title}"?`)) {
-                        channels.splice(index, 1);
-                        if(index === currentPlayingIndex) {
-                            videoPlayer.pause();
-                            videoPlayer.src = '';
-                            currentPlayingIndex = -1;
-                            userGuide.classList.remove('hidden');
-                            channelInfoDiv.classList.add('hidden');
-                            editFormContainer.classList.add('hidden');
-                        } else if (index < currentPlayingIndex) {
-                            currentPlayingIndex--;
-                        }
-                        renderChannelList(searchInput.value);
-                        updateButtonStates();
-                        saveChannelsToLocalStorage(); // Guardar cambios
-                    }
-                } else if (e.target.closest('.move-up-btn')) {
-                    e.stopPropagation();
-                    if (index > 0) {
-                        [channels[index], channels[index - 1]] = [channels[index - 1], channels[index]];
-                        if(index === currentPlayingIndex) currentPlayingIndex--;
-                        else if (index - 1 === currentPlayingIndex) currentPlayingIndex++;
-                        renderChannelList(searchInput.value);
-                        saveChannelsToLocalStorage(); // Guardar cambios
-                    }
-                } else if (e.target.closest('.move-down-btn')) {
-                    e.stopPropagation();
-                    if (index < channels.length - 1) {
-                        [channels[index], channels[index + 1]] = [channels[index + 1], channels[index]];
-                        if(index === currentPlayingIndex) currentPlayingIndex++;
-                        else if (index + 1 === currentPlayingIndex) currentPlayingIndex--;
-                        renderChannelList(searchInput.value);
-                        saveChannelsToLocalStorage(); // Guardar cambios
-                    }
-                } else {
-                    playChannel(index);
-                }
-            });
-
-            addChannelBtn.addEventListener('click', () => openEditor(null));
-            cancelEditBtn.addEventListener('click', closeEditor);
-
-            editForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const indexStr = document.getElementById('edit-index').value;
-                const updatedChannel = {
-                    title: document.getElementById('edit-title').value,
-                    logo: document.getElementById('edit-logo').value,
-                    group: document.getElementById('edit-group').value,
-                    url: document.getElementById('edit-url').value,
-                };
-                
-                if (indexStr) {
-                    const index = parseInt(indexStr, 10);
-                    channels[index] = updatedChannel;
-                } else {
-                    channels.push(updatedChannel);
-                }
-                
-                renderChannelList(searchInput.value);
-                updateButtonStates();
-                closeEditor();
-                saveChannelsToLocalStorage(); // Guardar cambios
-            });
-            
-            // --- Inicialización ---
-            loadChannelsFromLocalStorage();
-            renderChannelList();
-            updateButtonStates();
-            userGuide.classList.remove('hidden');
-        });
-    </script>
-</body>
-</html>
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://www.vivalivetv.com/public/files/shows/0/1/3813-294x165-FFFFFF.jpg" group-title="",Silja Live
+https://59ec5453559f0.streamlock.net/seljalive/_definst_/smil:VIVALIVE/chunklist_w740012946_b1896000.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc0CfBLPTdVRLyxhsV8Hq3wfIeJAPwiC2TQOhBNoFV893ShXIpe0MWXG9nhjQnTPtsMTk&usqp=CAU" group-title="Canal de noticias local.",Telered
+https://k20.usastreams.com:8081/telered/index.m3u8
+#EXTINF:-1 tvg-logo="https://canalesdominicanos.live/template/images/radios/mega-cine-tv.png" group-title="Canal retro tv.",Megacine TV
+https://cloudflare.streamgato.us:3125/live/megacinetvlive.m3u8
+#EXTINF:-1 tvg-logo="https://sicultura-live.s3.amazonaws.com/public/2022-11/313401143_527193602751613_1789836145711014030_n.png" group-title="Canal de noticias regional.",Canal 36
+https://stmv6.voxtvhd.com.br/xtremacartoons/xtremacartoons/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/zLkTnFfdGGq5-cuY0DBvsCoiRUToWFA8rcm_Z3ieUr7rwgmzyojRXIfqMXt9dm4ocjs" group-title="Canal  retro.",Retro tv
+https://live20.bozztv.com/akamaissh101/ssh101/chocobeats/chunks.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBsKLLZbFpvVQrOzRAnA9BCRraLxP3-GLwvBv30iNI6TpPz1o51sa1de7pGKS40Quzajw&usqp=CAU" group-title="Canal de series retro.",TV Retro
+https://live20.bozztv.com/akamaissh101/ssh101/tvretropalm2020/chunks.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9YKvejKBdJWBUfm0Oc32tKTO1QKQXXu2s4A&s" group-title="Canal de entretenimiento.",Tele sistema
+https://k20.usastreams.com:8081/telesistema/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCPgX3BAyVJrhddZBS934xmT6Kev9EUhXHeQ&s" group-title="Canal de noticias.",Canal 1 CR
+https://59ef525c24caa.streamlock.net/canal1cr/canal1cr/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqYT3mLOwSe2tCT9djITc1a4rC-hKxanvkywuAU8UeIkHaVkqwt1LDhrtUQqZO8m4cP-XHE4h-QnXlCBupaZ8oTASthEM7Rz5lAwu0l2_HRs9stLeJBvm8SUL4ONJ-kXWZM921yfOnAIdtz81kYBPy7JhQJLY8Lq1Ye4uuBeEawZvgAPT3-FfA0EaLfNkX/s600/extrema-tv.png" group-title="Canal de deportes extremos.",Extrematv
+https://627bb251f23c7.streamlock.net:444/ExtremaTV/ExtremaTV/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNtuYqz3KCkvM3aBb-Lg3YRtfoaVaDe9srK_6QZaajqCb7jS0RBcJ1lBUJaEIqJo21ahY&usqp=CAU" group-title="Canal local de Nicoya.",Nicoya TV
+https://59ef525c24caa.streamlock.net/nicoyatv/nicoyatv/chunklist_w1674958038.m3u8
+#EXTINF:-1 tvg-logo="https://pbs.twimg.com/profile_images/1761972439863402496/HYFYy2Zg_400x400.jpg" group-title="Canal de noticias y deportes.",TV Azteca
+https://azt-mun.otteravision.com/azt/mun/mun_1080p.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNo8nRAN4wCgrjHF17KzyCdU34-SRV5oOcrQ&s" group-title="Canal de noticias.",24 horas
+https://rtvelivestream.rtve.es/rtvesec/24h/24h_main_dvr_720.m3u8
+#EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/JOR8-8xL3x91J-1s4Rhu8N7odmnnrEFe5DDXxv9xRia88bCkkiWwiJQkUg3VFCScfRUxILaDNg=s900-c-k-c0x00ffffff-no-rj" group-title="Canal de entretenimiento y noticias.",Las estrellas
+https://channel01-onlymex.akamaized.net/hls/live/2022749/event01/index_1.m3u8
+#EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/WZacbtWNLdznCtQ5Au7EjtrVNmktZfQNiXOnIzTwllgNd1iRMhPITW-CQrGQjUVnS8IxN75UBA=s900-c-k-c0x00ffffff-no-rj" group-title="Canal de noticias y entretenimiento.",Tele Mundo
+https://nbcu-telemundoflorida-firetv.amagi.tv/playlist1080.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBxvhIPxIJvY8jcD7VFd6XnmqtnwC0YmUcG6Ttgtc3RSOnQrAcpq8bK8DljzNaqKchQbg&usqp=CAU" group-title="Canal de música retro.",Retro x
+https://acceso.radiosportstv.online:3259/hybrid/play.m3u8
+#EXTINF:-1 tvg-logo="https://cdn.rudo.video/assets/canal-13/live/logoApi_151f8e8d0c9e2a144f59f11ec492c3e91710874647.png" group-title="Películas clásicas latinas.",Latino Clásica
+https://streams2.sofast.tv/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/4d419a88-a62c-496f-b8a1-984e746f8259/manifest.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyeFcO1jqS7cHkeI6uFu8i1mXBb1hayIlshXespGXDMtv0YGhTBKzriaIGYUb4_TOMUd0&usqp=CAU" group-title="Noticias y entretenimiento de Miami.",Sol tv
+https://video03.logicahost.com.br/soltv/soltv/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIo1iQW2AJvIdVjUFVAwAxLgPALnvBMwGYFw&s" group-title="Canal local de Turrialba.",Mono
+https://cloudvideo.servers10.com:8081/8230/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://milemisoras.com/img/channel/abd12be06e14bf48011ce97f584bfefb.png" group-title="Demostración.",Play
+https://tvservices.fullhd-streaming.com:3941/stream/play.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF4WjCv7VeLbrEAtDzziTPFnO02S87ck8eLA&s" group-title="Entretenimiento.",Dreiko tv
+https://rtv.fullhd-streaming.com:19360/dreikotv/dreikotv.m3u8
+#EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/a1e4076264abe6b6ccde87a587966abe.webp" group-title="Canal de entretenimiento.",Retro Cartoons
+https://stmv3.voxtvhd.com.br/xtremaretrocartoons/xtremaretrocartoons/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://www.vivalivetv.com/public/files/shows/0/1/3668-294x165-FFFFFF.jpg" group-title="Deportes y noticias.",10 COSTA RICA
+https://acceso.radiosportstv.online:3285/hybrid/play.m3u8
+#EXTINF:-1 tvg-logo="https://image.roku.com/developer_channels/prod/685354bd84f85fe39c7ecae45018ccb60011681ba7838fd841e3f2392f4f6249.png" group-title="Infantil.",Extrema kits
+https://627bb251f23c7.streamlock.net:444/ExtremaKids/ExtremaKids/chunklist_w877184190.m3u8
+#EXTINF:-1 tvg-logo="https://pbs.twimg.com/profile_images/1510311834800246787/sfWgWmqk_400x400.jpg" group-title="Multimedios Costa Rica",Canal 8
+https://mdstrm.com/live-stream-playlist/5a7b1e63a8da282c34d65445/master.m3u8
+#EXTINF:-1 tvg-logo="https://radiocostarica.net/sites/default/files/styles/player_image/public/2024-05/Costa%20Rica%20Channel-Costa%20Rica.png.webp?itok=jdj8aeqR" group-title="Costa Rica Channel",Costa Rica Cannel
+https://video0.rogohosting.com:19360/8006/8006.m3u8
+#EXTINF:-1 tvg-logo="https://radiocostarica.net/sites/default/files/styles/player_image/public/2024-06/GAM%20TV%20CR-Costa%20Rica_0.png.webp?itok=ExXxZFSr" group-title="Entretenimiento",Gam TV
+https://v2.azulstream.com:8081/gamtv/gamtv/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/h88IKJCItR4KafxYzqfMphDkLzXdREH24qDrW-CzFMedCCjBl4D2baR3xWF48tOkNltM6MM9hA=s900-c-k-c0x00ffffff-no-rj" group-title="Deportes.",Claro spots
+https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/bein-sports-xtra-en-espanol/d3358062-b357-4738-9cfb-6824db0ada53/0.m3u8
+#EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/W7wJ9CcfTsIlMC9GWk7qgom0JO6R4DoFnHN1DGKuI2OtLQ_3w5zYuscMngY0OZfXtfxn" group-title="Red Bull TV: deportes",Red Bull TV
+https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9QUatPxBhTck6kKk1nTNsRuKLVgXUJfgVjA&s" group-title="VER MIAMI TV EN VIVO",Miami TV
+https://59ec5453559f0.streamlock.net/miamitv/smil:WEB/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/9Nh2mo9.png" group-title="",Antena seis tv
+https://video1.azulstream.com:8081/antenaseistv/index.m3u8
+#EXTINF:-1 tvg-logo="https://i.ibb.co/vJZqrFY/a4ed367c69c23110d458a332af95be0be64566f288ccb5f261689344e6ba5e0d.png" group-title="",CBTV
+https://cloudvideo.servers10.com:8081/8030/index.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/CFXZ8j0.png" group-title="",Cristo vicion
+https://3a310f6ec721e6b362fcd22772b57f36a2fe6bb2.tabeelcr.com:8080/cristovision31/iptv.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/YwUVTmS.png" group-title="",enlace Hd
+https://livecdn.enlace.plus/enlace/smil:enlace-hd.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.ibb.co/rdpcv7C/1689421727166.jpg" group-title="",Limón TV
+https://59ef525c24caa.streamlock.net//limontv1//limontv1//chunklist_w1710248255.m3u8
+#EXTINF:-1 tvg-logo="https://i.ibb.co/2MNzXN7/Channels4-profile-9.jpg" group-title="",Norte informativo
+https://videohd.live:19360/8076/8076.m3u8
+#EXTINF:-1 tvg-logo="https://i.ibb.co/P4kpMgk/1689344714578.jpg" group-title="",Soy Plancha TV
+https://59ef525c24caa.streamlock.net/vmtv/soyplancha/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.ibb.co/yn5M8dw/telefides-costa-rica.png" group-title="",Telefides
+https://s2.cwebtv.net:4433/telefides/telefides/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/KUpgeOf.png" group-title="",Telesur
+https://s1.tvdatta.com:3582/live/telesurlive.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/KVVU9PI.png" group-title="",TV Urbano
+https://59ef525c24caa.streamlock.net/tvurbano/tvurbano/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/1e7e289ab5c66e67ad623c5a1bec9f75.webp" group-title="",TV Vintage
+https://59ef525c24caa.streamlock.net/vmtv/tvvintage/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://xtrematv.com/wp-content/uploads/2023/05/LOGO-2023-XT-chico.png" group-title="",Extrema TV
+https://videostream.shockmedia.com.ar:19360/videoclub/videoclub.m3u8
+#EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/jCFvfJuhezHyqYCiBhWQtKvEyyq7syTMkpWRks1E_toGgPdaIMo9sMpxpMYWGBrdf2mSymKL=s900-c-k-c0x00ffffff-no-rj" group-title="",Cine Accion
+https://stmv6.voxtvhd.com.br/cineaccion/cineaccion/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/xsd3iI03lzA/sddefault.jpg" group-title="",Tele ver cana  12
+https://vdo1.streamgato.us:3342/live/televercanal12live.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRr3bmOPMWpG4PLRg_uRAvIEKPCZTprG-_Jw&s" group-title="",TELE VIDA
+https://tls-cl.cdnz.cl/televida/live/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://theretrochannel.tv/img/theretrofb.jpg" group-title="",RETRO CHANNEL
+https://5fd5567570c0e.streamlock.net/theretrochannel/stream/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQErFAV54FxgmM5JKD9Xxiq6GYifsgLagX08pesnsLHwiPKfPISfsnlmu4COyGfVa-WWmE&usqp=CAU" group-title="",Tvs live
+https://imagenuniversaltv.net:3741/live/tvslive.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEGqbHtYnAN-tyhP7XuSKDMi3E2oXL9jtoVspCuioh5ZVB-9w0r5wq0CSzyH_00QTpiCM&usqp=CAU" group-title="",Canal Bolivia
+https://cloud5.streaminglivehd.com:3819/hybrid/play.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtJvHa01Kz7msCS49obbGVIqvHeDCQr8EN_A&s" group-title="",Tele sur
+https://k20.usastreams.com:8081/tvsur/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/db915a4360bae6754dc699174c717e12.webp" group-title="",Codigo TV
+https://vdo2.streamgato.us:3313/live/codigotvlive.m3u8
+#EXTINF:-1 tvg-logo="https://lh6.ggpht.com/XBZm1nL7kgjjH5FEAN0NmeqWVaa-qlyqLJMuSbe3RCit7ZaZtpcXbf3nFFK2BbC2Lds" group-title="cotubanama",Canal 36
+https://host.streamingnation.live/p/3588/hybrid/play.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeFm-q_tTR9_DInWxrnzCJElp00p6sZPTdGg&s" group-title="retro",Retro Plus TV
+https://scl.edge.grupoz.cl/retroplustvuno/live/chunklist_w2129364046.m3u8
+#EXTINF:-1 tvg-logo="https://serenotv.com/wp-content/uploads/2025/05/208301.png" group-title="",WOW
+https://live20.bozztv.com/giatv/giatv-wowmovies/wowmovies/chunks.m3u8
+#EXTINF:-1 tvg-logo="https://serenotv.com/wp-content/uploads/2023/03/LOGO-GARABITO-TV-1024x800.jpg" group-title="",Garabito tv
+https://59ef525c24caa.streamlock.net/garabitoTV/garabitotv/chunklist_w878297441.m3u8
+#EXTINF:-1 tvg-logo="https://www.vivalivetv.com/public/files/shows/0/1/868-640x360-FFFFFF.jpg" group-title="",Miami TV live
+https://59ec5453559f0.streamlock.net/JennyLive/smil:ROKU/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://www.vivalivetv.com/public/files/shows/0/1/3519-294x165-FFFFFF.jpg" group-title="",EnergyTV Latino
+https://59ec5453559f0.streamlock.net/energytvlatino/smil:VIVALIVETV/chunklist_w527843109_b1896000.m3u8
+#EXTINF:-1 tvg-logo="https://cartagomedios.com/wp-content/uploads/2025/04/cropped-Logo-Color.webp" group-title="",Cartago Medios
+https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1753206087/ei/53h_aN_sH6HYj-8PibCIoQo/ip/45.239.65.117/id/cc26ac7e4af8c276/itag/312/source/youtube/requiressl/yes/ratebypass/yes/pfa/1/sgovp/clen%3D5693405%3Bdur%3D21.666%3Bgir%3Dyes%3Bitag%3D299%3Blmt%3D1750735670049140/rqh/1/hls_chunk_host/rr1---sn-opjjg-nwve.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/met/1753184487,/mh/Vu/mm/31,29/mn/sn-opjjg-nwve,sn-hp57kn6y/ms/au,rdu/mv/m/mvi/1/pcm2cms/yes/pl/24/rms/au,au/initcwndbps/3232500/bui/AY1jyLPoIQhalz4VStmBoZ50le7FLqQNQcr3rfnlH3g02L6IlbUM2NtRcBXTZ0QbuZn2H0gk05LnwbZ3/spc/l3OVKaENvQAmhyxwdX6F4GPBKgrdII9-KBOAL46-216ltVlmzJtKC6nh9VwAmQ/vprv/1/playlist_type/DVR/dover/13/txp/6209224/mt/1753184240/fvip/2/short_key/1/keepalive/yes/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,pfa,sgovp,rqh,xpc,bui,spc,vprv,playlist_type/sig/AJfQdSswRgIhALnsZbHNJJ43gamgG1kiKOcGFXH8qzEXzgdVbtJpQyXOAiEA7mXWLt1jbsbmu54u3ey6xBobt2ShvnNrZQDfnVmvhLQ%3D/lsparams/hls_chunk_host,met,mh,mm,mn,ms,mv,mvi,pcm2cms,pl,rms,initcwndbps/lsig/APaTxxMwRAIgEx7Z2InZ8n4xfL_WnSAMlSZUlE3OoG36LW50HfqIckcCIAVaiLsqPw3UQfz5XilufxfKx_V-lF4Ns9TXYiKv6jpK/playlist/index.m3u8
+#EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/ytc/AIdro_mRUs2di6I0DOPjNchStqW_tqT8RjJuiMGOPNuQd8ymMHI=s900-c-k-c0x00ffffff-no-rj" group-title="",WHD
+https://cloudvideo.servers10.com:8081/8130/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://d0cdb7b2de.cbaul-cdnwnd.com/9c7dbb7eba389216910092fa77cc9fd0/200000021-a20e7a20e9/700/LOGO%20SEP%202024.webp?ph=d0cdb7b2de" group-title="",TALTALTV CLASICA
+https://giatv.bozztv.com/giatv/giatv-TALTALTVTURISMO/TALTALTVTURISMO/chunks.m3u8
+#EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/ytc/AIdro_k8FMMJsWJsIpQTwyUXE84ISlV5E4mZnOMQz5cVwZg0sDE=s160-c-k-c0x00ffffff-no-rj" group-title="",Películas del Oeste
+https://amogonetworx-grjngo-2-eu.plex.wurl.tv/2000.m3u8
+#EXTINF:-1 tvg-logo="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCRyIeb5IY-BbZf4GL-ljuAxXmg2Y8Mttf5ZlEauL6LL1ainsD_Ly8-atcCtLZQAghALzHpJmRfDdY6pGjGxyLkbCWqmPlxqvyxuGK9EBdAz8nvJ41GDIB7ijVrgBj99pbuIvhA48c7eqncuN21Boz6_qkdhgER098nZkyp41u-LggItFxnv5Cit6U9Lg/s800/max-anime.jpg" group-title="",Max Anime
+https://live20.bozztv.com/giatv/giatv-dball/dball/chunks.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTQlQfNGHZKRc-pCxIcrCOLmZNsF7mUHpd8Q&s" group-title="",Moni TV
+https://live20.bozztv.com/giatv/giatv-quilpueo196208/quilpueo196208/chunks.m3u8
