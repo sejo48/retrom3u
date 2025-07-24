@@ -125,3 +125,5 @@ https://mist01.homestream.fun/hls/tlmas904/0_1/index.m3u8
 https://live.obslivestream.com/planetatv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://meganetfun.com/storage/channel-logos/4zE04qJPfTgzeV2Z7gYausmhLFKE5aYcRNGXvtQ6.jpg" group-title="",COPS 
 https://rightsboosterltd-cops-1-eu.plex.wurl.tv/2000.m3u8
+#EXTINF:-1 tvg-logo="https://serenotv.com/wp-content/uploads/2025/06/locomotion-800x800.jpg" group-title="",Canal locomocion TV
+https://live20.bozztv.com/giatvplayout7/giatv-210075/tracks-v1a1/mono.ts.m3u8
