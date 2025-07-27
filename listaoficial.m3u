@@ -145,6 +145,8 @@ https://amg00658-amg00658c66-canelatv-international-5554.playouts.now.amagi.tv/p
 https://run-rt-es.otteravision.com/run/rt_es/rt_es_720p_high.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/c06eb0cf2c420d1709dbb62d1754381d.webp" group-title="Sin Grupo",Guaymate TV
 https://live20.bozztv.com/akamaissh101/ssh101/guaymatetv/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/234cb338df1b00f91cc1827a9a9a1a75.webp" group-title="Sin Grupo",Family TV
+https://tv.webmedialive.com/familytv/live/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/0e3bb923a6e42d39bca3d8b1869e2eb3.webp" group-title="Sin Grupo",Free TV Acción
 https://amg01024-olympusat-topcinelatam-ono-ad-99.amagi.tv/1080p-cc/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/1c05c0a75e1cbcaa505315c593c01976.webp" group-title="Sin Grupo",Anzoátegui TV
@@ -159,8 +161,6 @@ https://cdn.fastocloud.com/leonel.m3u8
 https://amg00375-amg00375c10-fuse-us-3222.playouts.now.amagi.tv/playlist/amg00375-fusemediafast-somosnovelas-fuseus/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/5f58965018411c0ef81df7c6b596ad54.webp" group-title="Sin Grupo",Toonz Kids
 https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/toonzkids-spanish/master.m3u8
-#EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/234cb338df1b00f91cc1827a9a9a1a75.webp" group-title="Sin Grupo",Family TV
-https://tv.webmedialive.com/familytv/live/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/89fde3072167c8eca735a5b9b6a0be59.webp" group-title="Sin Grupo",Rockola Televisión
 https://e46fa4a445464f8a9150fa7d510eb85c.mediatailor.us-west-2.amazonaws.com/v1/master/2d2d0d97b0e548f025b2598a69b55bf30337aa0e/npp/S9K831QV8TO3291HQ8JS/hls3/now,-1m/m.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/72bf2ecca24095d1f015ae7c52749e68.webp" group-title="Sin Grupo",Kids TV Español Latino
