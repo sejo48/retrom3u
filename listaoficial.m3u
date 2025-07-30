@@ -53,8 +53,6 @@ https://v2.azulstream.com:8081/gamtv/gamtv/tracks-v1a1/mono.m3u8
 https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/bein-sports-xtra-en-espanol/d3358062-b357-4738-9cfb-6824db0ada53/0.m3u8
 #EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/W7wJ9CcfTsIlMC9GWk7qgom0JO6R4DoFnHN1DGKuI2OtLQ_3w5zYuscMngY0OZfXtfxn" group-title="Red Bull TV: Deportes",Red Bull TV
 https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9QUatPxBhTck6kKk1nTNsRuKLVgXUJfgVjA&s" group-title="Miami TV en Vivo",Miami TV
-https://59ec5453559f0.streamlock.net/miamitv/smil:WEB/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/9Nh2mo9.png" group-title="Sin Grupo",Antena Seis TV
 https://video1.azulstream.com:8081/antenaseistv/index.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co/vJZqrFY/a4ed367c69c23110d458a332af95be0be64566f288ccb5f261689344e6ba5e0d.png" group-title="Sin Grupo",CBTV
@@ -193,3 +191,11 @@ https://stmv1.voxtvhd.com.br/tvpenol/tvpenol/playlist.m3u8
 https://plustv.streamseguro.com:5443/LiveApp/streams/streaming.m3u8
 #EXTINF:-1 tvg-logo="https://canal3impresionante.com/wp-content/uploads/2020/12/LOGO-CANAL-3-con-circulo-blanco-1-1024x868.png" group-title="",Canal3 El Salvador
 https://cloud2.streaminglivehd.com:1936/8048/8048/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9QUatPxBhTck6kKk1nTNsRuKLVgXUJfgVjA&s" group-title="Miami TV en Vivo",Miami TV
+https://59ec5453559f0.streamlock.net/miamitv/smil:WEB/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://www.vivalivetv.com/templates/newhome/images/defaults/show.jpg" group-title="",Miami TV Food
+https://59ec5453559f0.streamlock.net/miamitvfoods/_definst_/smil:VIVALIVE/chunklist_w114372005_b1896000.m3u8
+#EXTINF:-1 tvg-logo="https://vivaespaña.tv/user/upload/source/miamitvfashion.jpg" group-title="",MiamiTV Fashion
+https://stream-us-east-1.getpublica.com/cl/250730d250hle1a3dbckhc2pig/1920x1080_9126770_0_f.m3u8?i=1187_12994
+#EXTINF:-1 tvg-logo="https://cdn-images-3.listennotes.com/podcasts/jenny-live/jenny-live-1764-opened-7bRILJgndfN-P0WxtqyCOwb.1400x1400.jpg" group-title="",Live Program Jenny Live
+https://stream-us-east-1.getpublica.com/cl/250730d250lct004qe42hkomn0/1280x720_1896000_0_f.m3u8?i=1187_12991
