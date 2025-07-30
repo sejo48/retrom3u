@@ -175,16 +175,12 @@ https://s4.tvdatta.com:3450/live/tvenlinealive.m3u8
 https://amg01024-olympusat-chiquilines-ono-ad-et.amagi.tv/1080p-cc/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/5e30e4537eb2ea84cff9fd51e0181317.webp" group-title="Sin Grupo",Free TV Hits
 https://amg01024-olympusat-flash-ono-ad-3q.amagi.tv/1080p-cc/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/db915a4360bae6754dc699174c717e12.webp" group-title="Sin Grupo",Código TV
-https://vdo2.streamgato.us:3313/live/codigotvlive.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/00c2cce97c6a9f5d9f73dae4f37ffbc4.webp" group-title="Sin Grupo",Master Video TV
 https://5fd5567570c0e.streamlock.net/222/stream/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/51e560600b65af19f305f491df5d04ac.webp" group-title="Sin Grupo",Free TV Clásico
 https://amg01024-olympusat-cineclasicoco-lgco-a8u19.amagi.tv/1080p-cc/index.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSkZgXSE75FCNg99QnzFkgAwVURmJLdnUYq8PxbC05He8JeIVL2" group-title="",360 RFTV
 https://acceso.radiosportstv.online:3417/live/360rftvcrlive.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8mgt3dsQT8jSApg1e3kqErppCQPdGHHH1iQ&s" group-title="",Antena 6 TV
-https://video1.azulstream.com:8081/antenaseistv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/5BYr8FaRq_hb6-0CkYnFmyLIn7b223Zgpizoq99BK-10e7XVjAyF9dvVflzFZmRdBrs=w600-h300-pc0xffffff-pd" group-title="",TV Nosara
 https://latamvdo.com:3870/hybrid/play.m3u8
 #EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/xABFSEF3L4NzA_jJd4jv-ikF_sopZ2vh2ujYj4zDua9w00vsmXkL_Qnw4VyV-42EtO-L" group-title="",TDTVCANAL
