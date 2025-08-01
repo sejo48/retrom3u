@@ -199,3 +199,7 @@ https://59ec5453559f0.streamlock.net/miamitvfoods/_definst_/smil:VIVALIVE/chunkl
 https://stream-us-east-1.getpublica.com/cl/250730d250hle1a3dbckhc2pig/1920x1080_9126770_0_f.m3u8?i=1187_12994
 #EXTINF:-1 tvg-logo="https://cdn-images-3.listennotes.com/podcasts/jenny-live/jenny-live-1764-opened-7bRILJgndfN-P0WxtqyCOwb.1400x1400.jpg" group-title="",Live Program Jenny Live
 https://stream-us-east-1.getpublica.com/cl/250730d250lct004qe42hkomn0/1280x720_1896000_0_f.m3u8?i=1187_12991
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQus_I9HxXLo3LOv55w2HCmMgrALIWNzbw1jsRlGY13VtAVYcKFYNUyibenS50ALHC2mxQ&usqp=CAU" group-title="",CLARO SPORTS
+https://dai.google.com/linear/hls/pa/event/yINISWAPQ0CPhPixe-40wQ/stream/b9d8cb06-2c8a-4fa8-926d-ae7693eb5a35:CBF2/master.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/68/Telemundo_logo_2018.svg" group-title="",telemundo
+https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
