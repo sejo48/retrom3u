@@ -79,12 +79,8 @@ https://59ef525c24caa.streamlock.net/vmtv/tvvintage/playlist.m3u8
 https://videostream.shockmedia.com.ar:19360/videoclub/videoclub.m3u8
 #EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/jCFvfJuhezHyqYCiBhWQtKvEyyq7syTMkpWRks1E_toGgPdaIMo9sMpxpMYWGBrdf2mSymKL=s900-c-k-c0x00ffffff-no-rj" group-title="Sin Grupo",Cine Acción
 https://stmv6.voxtvhd.com.br/cineaccion/cineaccion/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/xsd3iI03lzA/sddefault.jpg" group-title="Sin Grupo",Tele Ver Canal 12
-https://vdo1.streamgato.us:3342/live/televercanal12live.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRr3bmOPMWpG4PLRg_uRAvIEKPCZTprG-_Jw&s" group-title="Sin Grupo",Tele Vida
 https://tls-cl.cdnz.cl/televida/live/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://theretrochannel.tv/img/theretrofb.jpg" group-title="Sin Grupo",Retro Channel
-https://5fd5567570c0e.streamlock.net/theretrochannel/stream/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQErFAV54FxgmM5JKD9Xxiq6GYifsgLagX08pesnsLHwiPKfPISfsnlmu4COyGfVa-WWmE&usqp=CAU" group-title="Sin Grupo",TVs Live
 https://imagenuniversaltv.net:3741/live/tvslive.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEGqbHtYnAN-tyhP7XuSKDMi3E2oXL9jtoVspCuioh5ZVB-9w0r5wq0CSzyH_00QTpiCM&usqp=CAU" group-title="Sin Grupo",Canal Bolivia
@@ -125,16 +121,12 @@ https://rightsboosterltd-cops-1-eu.plex.wurl.tv/2000.m3u8
 https://live20.bozztv.com/giatvplayout7/giatv-210075/tracks-v1a1/mono.ts.m3u8
 #EXTINF:-1 tvg-logo="https://meganetfun.com/storage/channel-logos/a8bfDgk27FrQUad7Ptl7nz44PHqFUa91F29ktOhz.jpg" group-title="Sin Grupo",TVE
 https://rtvelivestream-rtveplayplus.rtve.es/rtvesec/int/tvei_ame_main_576.m3u8
-#EXTINF:-1 tvg-logo="https://serenotv.com/wp-content/uploads/2022/01/Canal-Mi-TV-Television-Clasica-en-vivo.jpg" group-title="Sin Grupo",Mi TV Clásico
-https://5aa8c7549bfa9.streamlock.net/live/livestream123/chunklist_w2146708339.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/c19e13a54f89cace2b5c01ee2252a2c7.webp" group-title="Sin Grupo",TV Familia en Vivo
 https://59d39900ebfb8.streamlock.net/tvfamilia_480p/tvfamilia_480p/chunklist_w1024274739.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/bb42115ec41fea4ac36dec93b294d2e2.webp" group-title="Sin Grupo",Runtime Español en Vivo
 https://run-rt-uh.otteravision.com/run/rt_uh/rt_uh_720.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/a3bd552eca6645942a60a053fe61fafb.webp" group-title="Sin Grupo",Sony Canal Novelas
 https://spt-novelas-1-us.canelatv.wurl.tv/3000.m3u8
-#EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/8f667db78acfeca3e792be86616ee96f.webp" group-title="Sin Grupo",Cine Friki en Vivo
-https://d2jqgm8hyia1n3.cloudfront.net/v1/manifest/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-o8hl8d0bx6aah/8bc6efbf-2c78-4a33-98ae-bd2a2a380d89/3.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/47f99fa1872d0b6c8d1c562b94bfeb31.webp" group-title="Sin Grupo",CNN en Español
 https://amg00803-cnnfast-amg00803c3-lg-es-5477.playouts.now.amagi.tv/playlist1080p.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/61bf055c59234dcf9591c1c8cb3657b4.webp" group-title="Sin Grupo",Cine Romántico
@@ -161,8 +153,6 @@ https://amg00375-amg00375c10-fuse-us-3222.playouts.now.amagi.tv/playlist/amg0037
 https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/toonzkids-spanish/master.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/89fde3072167c8eca735a5b9b6a0be59.webp" group-title="Sin Grupo",Rockola Televisión
 https://e46fa4a445464f8a9150fa7d510eb85c.mediatailor.us-west-2.amazonaws.com/v1/master/2d2d0d97b0e548f025b2598a69b55bf30337aa0e/npp/S9K831QV8TO3291HQ8JS/hls3/now,-1m/m.m3u8
-#EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/72bf2ecca24095d1f015ae7c52749e68.webp" group-title="Sin Grupo",Kids TV Español Latino
-https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/kids-tv-et/19188c01-b977-41d1-b096-caed7d114214/1.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/7c32e4c6d73b63dd532a48dd4e17f634.webp" group-title="Sin Grupo",Presencia TV
 https://live20.bozztv.com/akamaissh101/ssh101/mitvenvivo/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/8f6d4c60d90805aad81d1b0cb5f566a5.webp" group-title="Sin Grupo",Canela Kids
@@ -195,11 +185,5 @@ https://cloud2.streaminglivehd.com:1936/8048/8048/playlist.m3u8
 https://59ec5453559f0.streamlock.net/miamitv/smil:WEB/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.vivalivetv.com/templates/newhome/images/defaults/show.jpg" group-title="",Miami TV Food
 https://59ec5453559f0.streamlock.net/miamitvfoods/_definst_/smil:VIVALIVE/chunklist_w114372005_b1896000.m3u8
-#EXTINF:-1 tvg-logo="https://vivaespaña.tv/user/upload/source/miamitvfashion.jpg" group-title="",MiamiTV Fashion
-https://stream-us-east-1.getpublica.com/cl/250730d250hle1a3dbckhc2pig/1920x1080_9126770_0_f.m3u8?i=1187_12994
-#EXTINF:-1 tvg-logo="https://cdn-images-3.listennotes.com/podcasts/jenny-live/jenny-live-1764-opened-7bRILJgndfN-P0WxtqyCOwb.1400x1400.jpg" group-title="",Live Program Jenny Live
-https://stream-us-east-1.getpublica.com/cl/250730d250lct004qe42hkomn0/1280x720_1896000_0_f.m3u8?i=1187_12991
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQus_I9HxXLo3LOv55w2HCmMgrALIWNzbw1jsRlGY13VtAVYcKFYNUyibenS50ALHC2mxQ&usqp=CAU" group-title="",CLARO SPORTS
-https://dai.google.com/linear/hls/pa/event/yINISWAPQ0CPhPixe-40wQ/stream/b9d8cb06-2c8a-4fa8-926d-ae7693eb5a35:CBF2/master.m3u8
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/68/Telemundo_logo_2018.svg" group-title="",telemundo
 https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
