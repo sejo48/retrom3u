@@ -76,7 +76,7 @@ https://s1.tvdatta.com:3582/live/telesurlive.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/1e7e289ab5c66e67ad623c5a1bec9f75.webp" group-title="Sin Grupo",TV Vintage
 https://59ef525c24caa.streamlock.net/vmtv/tvvintage/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://xtrematv.com/wp-content/uploads/2023/05/LOGO-2023-XT-chico.png" group-title="Sin Grupo",Extrema TV
-https://videostream.shockmedia.com.ar:19360/videoclub/videoclub.m3u8
+https://627bb251f23c7.streamlock.net:444/ExtremaTV/ExtremaTV/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/jCFvfJuhezHyqYCiBhWQtKvEyyq7syTMkpWRks1E_toGgPdaIMo9sMpxpMYWGBrdf2mSymKL=s900-c-k-c0x00ffffff-no-rj" group-title="Sin Grupo",Cine Acción
 https://stmv6.voxtvhd.com.br/cineaccion/cineaccion/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRr3bmOPMWpG4PLRg_uRAvIEKPCZTprG-_Jw&s" group-title="Sin Grupo",Tele Vida
@@ -94,7 +94,7 @@ https://host.streamingnation.live/p/3588/hybrid/play.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeFm-q_tTR9_DInWxrnzCJElp00p6sZPTdGg&s" group-title="Retro",Retro Plus TV
 https://scl.edge.grupoz.cl/retroplustvuno/live/chunklist_w2129364046.m3u8
 #EXTINF:-1 tvg-logo="https://serenotv.com/wp-content/uploads/2025/05/208301.png" group-title="Sin Grupo",WOW
-https://live20.bozztv.com/giatv/giatv-wowmovies/wowmovies/chunks.m3u8
+https://cdn.elsalvadordigital.com:1936/wowtv/smil:wowtv.smil/chunklist_w1280059691_b2000000_slen.m3u8
 #EXTINF:-1 tvg-logo="https://serenotv.com/wp-content/uploads/2023/03/LOGO-GARABITO-TV-1024x800.jpg" group-title="Sin Grupo",Garabito TV
 https://59ef525c24caa.streamlock.net/garabitoTV/garabitotv/chunklist_w878297441.m3u8
 #EXTINF:-1 tvg-logo="https://www.vivalivetv.com/public/files/shows/0/1/3519-294x165-FFFFFF.jpg" group-title="Sin Grupo",EnergyTV Latino
@@ -139,8 +139,6 @@ https://live20.bozztv.com/akamaissh101/ssh101/guaymatetv/playlist.m3u8
 https://tv.webmedialive.com/familytv/live/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/0e3bb923a6e42d39bca3d8b1869e2eb3.webp" group-title="Sin Grupo",Free TV Acción
 https://amg01024-olympusat-topcinelatam-ono-ad-99.amagi.tv/1080p-cc/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/1c05c0a75e1cbcaa505315c593c01976.webp" group-title="Sin Grupo",Anzoátegui TV
-https://vcp2.myplaytv.com/anzoateguitv/anzoateguitv/chunklist_w772739016.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/178c759ece43186a94e69f30b17dca2d.webp" group-title="Sin Grupo",TUTV en Vivo
 https://stream.giostreaming.net:19360/canal11/canal11.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/7e030786c319ae1f2f95da18b6cf634e.webp" group-title="Sin Grupo",Free TV Sureño
@@ -175,7 +173,7 @@ https://latamvdo.com:3870/hybrid/play.m3u8
 https://cloudvideo.servers10.com:8081/8230/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.tvsur.co.cr/wp-content/uploads/2022/09/cropped-LOGO-TV-SUR-PEREZ-ZELEDON-TRAZO-BLANCO.png" group-title="",TV Sur, Canal 14
 https://k20.usastreams.com:8081/tvsur/index.m3u8
-#EXTINF:-1 tvg-logo="" group-title="",Tv Peñol
+#EXTINF:-1 tvg-logo="https://serenotv.com/wp-content/uploads/2025/06/Canal-Penol-hd-315x315.jpg" group-title="",Tv Peñol
 https://stmv1.voxtvhd.com.br/tvpenol/tvpenol/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjn7JW_vqrJQS7Dc1YxbonhBEbg-JwZKm8SA&s" group-title="",Pluz TV
 https://plustv.streamseguro.com:5443/LiveApp/streams/streaming.m3u8
