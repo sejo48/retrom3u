@@ -128,7 +128,7 @@ https://tv.webmedialive.com/familytv/live/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/0e3bb923a6e42d39bca3d8b1869e2eb3.webp" group-title="Sin Grupo",Free TV Acción
 https://amg01024-olympusat-topcinelatam-ono-ad-99.amagi.tv/1080p-cc/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/178c759ece43186a94e69f30b17dca2d.webp" group-title="Sin Grupo",TUTV en Vivo
-https://stream.giostreaming.net:19360/canal11/canal11.m3u8
+https://stream.giostreaming.app/canal11/canal11.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/7e030786c319ae1f2f95da18b6cf634e.webp" group-title="Sin Grupo",Free TV Sureño
 https://amg01024-olympusat-cinesureno-ono-ad-h2.amagi.tv/1080p-cc/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/e277fbff1d036a1c11aa18f8befee081.webp" group-title="Sin Grupo",15 TV en Vivo
@@ -162,7 +162,7 @@ https://stmv1.voxtvhd.com.br/tvpenol/tvpenol/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjn7JW_vqrJQS7Dc1YxbonhBEbg-JwZKm8SA&s" group-title="",Pluz TV
 https://plustv.streamseguro.com:5443/LiveApp/streams/streaming.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9QUatPxBhTck6kKk1nTNsRuKLVgXUJfgVjA&s" group-title="Miami TV en Vivo",Miami TV
-https://43d129f5f27a459c9905c5e874866316.mediatailor.us-east-2.amazonaws.com/v1/manifest/c3d3fd1c31fa281b88eab2cd253e2ca576b6628b/VivaLive-MiamiTV/e174546e-15a8-4879-8646-fdbde696f8f9/0.m3u8
+https://bdc8100df748400cabc7e133824c8ceb.mediatailor.us-east-2.amazonaws.com/v1/manifest/c3d3fd1c31fa281b88eab2cd253e2ca576b6628b/fast-jennylive/d3c2c6fe-bdde-4074-9054-563cfadef3eb/0.m3u8
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/68/Telemundo_logo_2018.svg" group-title="",telemundo
 https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
 #EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/FHXMY9wH7GFpJiWrArhiZwmbpPsLvRgP68iy0Nx89cC0cHOk20zY6bEdA6mId-BqgnBRSAxy=s900-c-k-c0x00ffffff-no-rj" group-title="",¡OPA! CANAL 38
