@@ -149,21 +149,21 @@ https://amg01024-olympusat-flash-ono-ad-3q.amagi.tv/1080p-cc/index.m3u8
 https://5fd5567570c0e.streamlock.net/222/stream/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/51e560600b65af19f305f491df5d04ac.webp" group-title="Sin Grupo",Free TV Clásico
 https://amg01024-olympusat-cineclasicoco-lgco-a8u19.amagi.tv/1080p-cc/index.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSkZgXSE75FCNg99QnzFkgAwVURmJLdnUYq8PxbC05He8JeIVL2" group-title="",360 RFTV
+#EXTINF:-1 tvg-logo="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSkZgXSE75FCNg99QnzFkgAwVURmJLdnUYq8PxbC05He8JeIVL2" group-title="General",360 RFTV
 https://acceso.radiosportstv.online:3417/live/360rftvcrlive.m3u8
-#EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/5BYr8FaRq_hb6-0CkYnFmyLIn7b223Zgpizoq99BK-10e7XVjAyF9dvVflzFZmRdBrs=w600-h300-pc0xffffff-pd" group-title="",TV Nosara
+#EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/5BYr8FaRq_hb6-0CkYnFmyLIn7b223Zgpizoq99BK-10e7XVjAyF9dvVflzFZmRdBrs=w600-h300-pc0xffffff-pd" group-title="General",TV Nosara
 https://latamvdo.com:3870/hybrid/play.m3u8
-#EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/xABFSEF3L4NzA_jJd4jv-ikF_sopZ2vh2ujYj4zDua9w00vsmXkL_Qnw4VyV-42EtO-L" group-title="",TDTVCANAL
+#EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/xABFSEF3L4NzA_jJd4jv-ikF_sopZ2vh2ujYj4zDua9w00vsmXkL_Qnw4VyV-42EtO-L" group-title="General",TDTVCANAL
 https://cloudvideo.servers10.com:8081/8230/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.tvsur.co.cr/wp-content/uploads/2022/09/cropped-LOGO-TV-SUR-PEREZ-ZELEDON-TRAZO-BLANCO.png" group-title="",TV Sur, Canal 14
+#EXTINF:-1 tvg-logo="https://www.tvsur.co.cr/wp-content/uploads/2022/09/cropped-LOGO-TV-SUR-PEREZ-ZELEDON-TRAZO-BLANCO.png" group-title="General",Canal 14
 https://k20.usastreams.com:8081/tvsur/index.m3u8
-#EXTINF:-1 tvg-logo="https://serenotv.com/wp-content/uploads/2025/06/Canal-Penol-hd-315x315.jpg" group-title="",Tv Peñol
+#EXTINF:-1 tvg-logo="https://serenotv.com/wp-content/uploads/2025/06/Canal-Penol-hd-315x315.jpg" group-title="General",Tv Peñol
 https://stmv1.voxtvhd.com.br/tvpenol/tvpenol/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjn7JW_vqrJQS7Dc1YxbonhBEbg-JwZKm8SA&s" group-title="",Pluz TV
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjn7JW_vqrJQS7Dc1YxbonhBEbg-JwZKm8SA&s" group-title="General",Pluz TV
 https://plustv.streamseguro.com:5443/LiveApp/streams/streaming.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9QUatPxBhTck6kKk1nTNsRuKLVgXUJfgVjA&s" group-title="Miami TV en Vivo",Miami TV
 https://bdc8100df748400cabc7e133824c8ceb.mediatailor.us-east-2.amazonaws.com/v1/manifest/c3d3fd1c31fa281b88eab2cd253e2ca576b6628b/fast-jennylive/d3c2c6fe-bdde-4074-9054-563cfadef3eb/0.m3u8
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/68/Telemundo_logo_2018.svg" group-title="",telemundo
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/68/Telemundo_logo_2018.svg" group-title="General",telemundo
 https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
-#EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/FHXMY9wH7GFpJiWrArhiZwmbpPsLvRgP68iy0Nx89cC0cHOk20zY6bEdA6mId-BqgnBRSAxy=s900-c-k-c0x00ffffff-no-rj" group-title="",¡OPA! CANAL 38
+#EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/FHXMY9wH7GFpJiWrArhiZwmbpPsLvRgP68iy0Nx89cC0cHOk20zY6bEdA6mId-BqgnBRSAxy=s900-c-k-c0x00ffffff-no-rj" group-title="General",¡OPA! CANAL 38
 https://5fc584f3f19c9.streamlock.net/genteopa/videogenteopa/playlist.m3u8
