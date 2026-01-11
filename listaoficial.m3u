@@ -12,7 +12,7 @@ https://live20.bozztv.com/akamaissh101/ssh101/tvretropalm2020/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9YKvejKBdJWBUfm0Oc32tKTO1QKQXXu2s4A&s" group-title="Canal de Entretenimiento.",Tele Sistema
 https://k20.usastreams.com:8081/telesistema/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCPgX3BAyVJrhddZBS934xmT6Kev9EUhXHeQ&s" group-title="Canal de Noticias.",Canal 1 CR
-https://59ef525c24caa.streamlock.net/canal1cr/canal1cr/playlist.m3u8
+https://vid.canal1cr.com:3906/live/weblive.m3u8
 #EXTINF:-1 tvg-logo="https://lh3.googleusercontent.com/sszFJ-XNovmccK2_CjwfMFFRQ0Xzdzu7lEoyh8RM0nHBWKx_tc9reo32w6p2gV5TZ-M=h512" group-title="Canal de Deportes Extremos.",Extrema TV
 https://627bb251f23c7.streamlock.net:444/ExtremaTV/ExtremaTV/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNtuYqz3KCkvM3aBb-Lg3YRtfoaVaDe9srK_6QZaajqCb7jS0RBcJ1lBUJaEIqJo21ahY&usqp=CAU" group-title="Canal Local de Nicoya.",Nicoya TV
@@ -21,12 +21,8 @@ https://59ef525c24caa.streamlock.net/nicoyatv/nicoyatv/chunklist_w1674958038.m3u
 https://azt-mun.otteravision.com/azt/mun/mun_1080p.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNo8nRAN4wCgrjHF17KzyCdU34-SRV5oOcrQ&s" group-title="Canal de Noticias.",24 Horas
 https://rtvelivestream.rtve.es/rtvesec/24h/24h_main_dvr_720.m3u8
-#EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/JOR8-8xL3x91J-1s4Rhu8N7odmnnrEFe5DDXxv9xRia88bCkkiWwiJQkUg3VFCScfRUxILaDNg=s900-c-k-c0x00ffffff-no-rj" group-title="Canal de Entretenimiento y Noticias.",Las Estrellas
-https://channel01-onlymex.akamaized.net/hls/live/2022749/event01/index_1.m3u8
-#EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/WZacbtWNLdznCtQ5Au7EjtrVNmktZfQNiXOnIzTwllgNd1iRMhPITW-CQrGQjUVnS8IxN75UBA=s900-c-k-c0x00ffffff-no-rj" group-title="Canal de Noticias y Entretenimiento.",Tele Mundo
-https://nbcu-telemundoflorida-firetv.amagi.tv/playlist1080.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBxvhIPxIJvY8jcD7VFd6XnmqtnwC0YmUcG6Ttgtc3RSOnQrAcpq8bK8DljzNaqKchQbg&usqp=CAU" group-title="Canal de Música Retro.",Retro X
-https://acceso.radiosportstv.online:3259/hybrid/play.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGT0UC9JOLykeuBjIg2diQTDZcgtEVmiYqvQ&s" group-title="Canal de Música Retro.",Retro X
+https://bozztv.com/akamaissh101/ssh101/retroxcrtv/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://cdn.rudo.video/assets/canal-13/live/logoApi_151f8e8d0c9e2a144f59f11ec492c3e91710874647.png" group-title="Películas Clásicas Latinas.",Latino Clásica
 https://streams2.sofast.tv/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/4d419a88-a62c-496f-b8a1-984e746f8259/manifest.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyeFcO1jqS7cHkeI6uFu8i1mXBb1hayIlshXespGXDMtv0YGhTBKzriaIGYUb4_TOMUd0&usqp=CAU" group-title="Noticias y Entretenimiento de Miami.",Sol TV
@@ -58,7 +54,7 @@ https://video1.azulstream.com:8081/antenaseistv/index.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co/vJZqrFY/a4ed367c69c23110d458a332af95be0be64566f288ccb5f261689344e6ba5e0d.png" group-title="Sin Grupo",CBTV
 https://cloudvideo.servers10.com:8081/8030/index.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/CFXZ8j0.png" group-title="Sin Grupo",Cristo Visión
-https://3a310f6ec721e6b362fcd22772b57f36a2fe6bb2.tabeelcr.com:8080/cristovision31/iptv.m3u8
+https://5fc584f3f19c9.streamlock.net/cristovision/videocristovision/chunklist_w1198882065_DVR.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/YwUVTmS.png" group-title="Sin Grupo",Enlace HD
 https://livecdn.enlace.plus/enlace/smil:enlace-hd.smil/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://i.ibb.co/rdpcv7C/1689421727166.jpg" group-title="Sin Grupo",Limón TV
@@ -94,7 +90,7 @@ https://59ef525c24caa.streamlock.net/garabitoTV/garabitotv/chunklist_w878297441.
 #EXTINF:-1 tvg-logo="https://www.vivalivetv.com/public/files/shows/0/1/3519-294x165-FFFFFF.jpg" group-title="Sin Grupo",EnergyTV Latino
 https://59ec5453559f0.streamlock.net/energytvlatino/smil:VIVALIVETV/chunklist_w527843109_b1896000.m3u8
 #EXTINF:-1 tvg-logo="https://cartagomedios.com/wp-content/uploads/2025/04/cropped-Logo-Color.webp" group-title="Sin Grupo",Cartago Medios
-https://acceso.radiosportstv.online:3368/multi_live/play_720.m3u8
+https://acceso.mediosdecostarica.com:3511/live/cartagomediostvlive.m3u8
 #EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/ytc/AIdro_mRUs2di6I0DOPjNchStqW_tqT8RjJuiMGOPNuQd8ymMHI=s900-c-k-c0x00ffffff-no-rj" group-title="Sin Grupo",WHD
 https://cloudvideo.servers10.com:8081/8130/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/ytc/AIdro_k8FMMJsWJsIpQTwyUXE84ISlV5E4mZnOMQz5cVwZg0sDE=s160-c-k-c0x00ffffff-no-rj" group-title="Sin Grupo",Películas del Oeste
@@ -103,8 +99,6 @@ https://amogonetworx-grjngo-2-eu.plex.wurl.tv/2000.m3u8
 https://live20.bozztv.com/giatv/giatv-dball/dball/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://meganetfun.com/storage/channel-logos/q8OrvMkGTpkTmdQ2SBT5f7xq6ZSakeP2MplANv4Z.jpg" group-title="Sin Grupo",Tele +
 https://mist01.homestream.fun/hls/tlmas904/0_1/index.m3u8
-#EXTINF:-1 tvg-logo="https://meganetfun.com/storage/channel-logos/iJ7r10nI35hdcB5K4CWtXbdsgN4T83qwRMgzPFH2.jpg" group-title="Sin Grupo",Planeta TV
-https://live.obslivestream.com/planetatv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://meganetfun.com/storage/channel-logos/4zE04qJPfTgzeV2Z7gYausmhLFKE5aYcRNGXvtQ6.jpg" group-title="Sin Grupo",Cops
 https://rightsboosterltd-cops-1-eu.plex.wurl.tv/2000.m3u8
 #EXTINF:-1 tvg-logo="https://serenotv.com/wp-content/uploads/2025/06/locomotion-800x800.jpg" group-title="Sin Grupo",Locomoción TV
@@ -132,7 +126,7 @@ https://stream.giostreaming.app/canal11/canal11.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/7e030786c319ae1f2f95da18b6cf634e.webp" group-title="Sin Grupo",Free TV Sureño
 https://amg01024-olympusat-cinesureno-ono-ad-h2.amagi.tv/1080p-cc/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/e277fbff1d036a1c11aa18f8befee081.webp" group-title="Sin Grupo",15 TV en Vivo
-https://cdn.fastocloud.com/leonel.m3u8
+https://wowza.ucr.ac.cr/quinceucr/_definst_/quinceucr.stream/chunklist_w37959280_vo.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/bb5582fe2b094e393986730a1be45283.webp" group-title="Sin Grupo",Somos Novelas
 https://amg00375-amg00375c10-fuse-us-3222.playouts.now.amagi.tv/playlist/amg00375-fusemediafast-somosnovelas-fuseus/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/5f58965018411c0ef81df7c6b596ad54.webp" group-title="Sin Grupo",Toonz Kids
@@ -150,7 +144,7 @@ https://5fd5567570c0e.streamlock.net/222/stream/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-l/51e560600b65af19f305f491df5d04ac.webp" group-title="Sin Grupo",Free TV Clásico
 https://amg01024-olympusat-cineclasicoco-lgco-a8u19.amagi.tv/1080p-cc/index.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSkZgXSE75FCNg99QnzFkgAwVURmJLdnUYq8PxbC05He8JeIVL2" group-title="Sin Grupo",360 RFTV
-https://acceso.radiosportstv.online:3417/live/360rftvcrlive.m3u8
+https://acceso.mediosdecostarica.com:3638/live/360rftvcrlive.m3u8
 #EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/5BYr8FaRq_hb6-0CkYnFmyLIn7b223Zgpizoq99BK-10e7XVjAyF9dvVflzFZmRdBrs=w600-h300-pc0xffffff-pd" group-title="Sin Grupo",TV Nosara
 https://latamvdo.com:3870/hybrid/play.m3u8
 #EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/xABFSEF3L4NzA_jJd4jv-ikF_sopZ2vh2ujYj4zDua9w00vsmXkL_Qnw4VyV-42EtO-L" group-title="Sin Grupo",TDTVCANAL
@@ -162,7 +156,7 @@ https://stmv1.voxtvhd.com.br/tvpenol/tvpenol/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjn7JW_vqrJQS7Dc1YxbonhBEbg-JwZKm8SA&s" group-title="Sin Grupo",Pluz TV
 https://plustv.streamseguro.com:5443/LiveApp/streams/streaming.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9QUatPxBhTck6kKk1nTNsRuKLVgXUJfgVjA&s" group-title="Miami TV en Vivo",Miami TV
-https://bdc8100df748400cabc7e133824c8ceb.mediatailor.us-east-2.amazonaws.com/v1/manifest/c3d3fd1c31fa281b88eab2cd253e2ca576b6628b/fast-jennylive/d3c2c6fe-bdde-4074-9054-563cfadef3eb/0.m3u8
+https://f537294740ba4429b8de5354b0e4452d.mediatailor.us-east-2.amazonaws.com/v1/manifest/c3d3fd1c31fa281b88eab2cd253e2ca576b6628b/LIVE/26c8ce35-4e3d-4b24-b714-6cd86487465c/0.m3u8
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/68/Telemundo_logo_2018.svg" group-title="Sin Grupo",telemundo
 https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
 #EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/FHXMY9wH7GFpJiWrArhiZwmbpPsLvRgP68iy0Nx89cC0cHOk20zY6bEdA6mId-BqgnBRSAxy=s900-c-k-c0x00ffffff-no-rj" group-title="Sin Grupo",¡OPA! CANAL 38
