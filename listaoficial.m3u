@@ -22,7 +22,7 @@ https://azt-mun.otteravision.com/azt/mun/mun_1080p.m3u8
 #EXTINF:-1 tvg-name="24 Horas" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNo8nRAN4wCgrjHF17KzyCdU34-SRV5oOcrQ&s" group-title="Canal de Noticias.",24 Horas
 https://rtvelivestream.rtve.es/rtvesec/24h/24h_main_dvr_720.m3u8
 #EXTINF:-1 tvg-name="Retro X" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGT0UC9JOLykeuBjIg2diQTDZcgtEVmiYqvQ&s" group-title="Canal de Música Retro.",Retro X
-https://bozztv.com/akamaissh101/ssh101/retroxcrtv/chunks.m3u8
+https://lbgo.bozztv.com/ssh101/ssh101/retyroxtv/chunks.m3u8
 #EXTINF:-1 tvg-name="Latino Clásica" tvg-logo="https://cdn.rudo.video/assets/canal-13/live/logoApi_151f8e8d0c9e2a144f59f11ec492c3e91710874647.png" group-title="Películas Clásicas Latinas.",Latino Clásica
 https://streams2.sofast.tv/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/4d419a88-a62c-496f-b8a1-984e746f8259/manifest.m3u8
 #EXTINF:-1 tvg-name="Sol TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyeFcO1jqS7cHkeI6uFu8i1mXBb1hayIlshXespGXDMtv0YGhTBKzriaIGYUb4_TOMUd0&usqp=CAU" group-title="Noticias y Entretenimiento de Miami.",Sol TV
